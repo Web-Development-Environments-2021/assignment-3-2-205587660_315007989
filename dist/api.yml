@@ -181,14 +181,13 @@ paths:
                   example: 211
                 referee:
                   type: String
-                  example: John
+                  example: Daniel Izmaylov
                 stageID:
                   type: integer
                   example: 6
                 stadium: 
-
                   type: String
-                  example: Silverdo
+                  example: Sydbank Park
       responses:
         "201":
           description: Game created
@@ -977,9 +976,9 @@ components:
           type: string
           example: 19941030
         homeTeam:
-          $ref: "#/components/schemas/Team/properties/id"
+          $ref: "#/components/schemas/Team/properties/team_id"
         awayTeam:
-          $ref: "#/components/schemas/Team/properties/id"
+          $ref: "#/components/schemas/Team/properties/team_id"
         referees:
           $ref: "#/components/schemas/Referee/properties/Name"
         homeScore:
@@ -997,7 +996,7 @@ components:
       properties:
         gameId:
           type: integer
-          example: 12
+          example: 7
         eventType:
           type: string
           example: "red Card"

@@ -14,7 +14,7 @@ async function getLeagueDetails() {
     }
   );
   const stage = await axios.get(
-    `https://soccer.sportmonks.com/api/v2.0/stages/${league.data.data.current_stage_id}`,
+    `https://soccer.sportmonks.com/api/v2.0/stages/season/18334`,
     {
       params: {
         api_token: process.env.api_token,
@@ -24,7 +24,7 @@ async function getLeagueDetails() {
   return {
     league_name: league.data.data.name,
     current_season_name: league.data.data.season.data.name,
-    current_stage_name: stage.data.data.name,
+    current_stage_name: stage.data.data[3].name,
     // next game details should come from DB
   };
 }
