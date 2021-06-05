@@ -182,9 +182,9 @@ paths:
                 referee:
                   type: String
                   example: Daniel Izmaylov
-                stageID:
-                  type: integer
-                  example: 6
+                stageName:
+                  type: String
+                  example: Regular Season
                 stadium: 
                   type: String
                   example: Sydbank Park
@@ -767,6 +767,22 @@ paths:
                 items:
                   type: string 
                 example: ["Daniel Izmaylov", "Ofek Ronen" ]
+
+  /league/Stages/:
+    get:
+      tags:
+        - league
+      summary: Get all available Referees
+      responses:
+        "200":
+          description: all available Referees
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string 
+                example: ["Conference League Play-offs-Final","Regular Season"]
 
   /league/Stadiums/:
     get:

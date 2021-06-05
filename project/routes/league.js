@@ -32,4 +32,13 @@ router.get("/Stadiums", async (req, res, next) => {
   }
 });
 
+router.get("/Stages", async (req, res, next) => {
+  try {
+    const ref_details = await league_utils.getStages();
+    res.send(ref_details);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
