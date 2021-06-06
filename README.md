@@ -6,5 +6,6 @@ Link to API:
 Bonus:
 We have added the functionality of coaches, league management page 
 
-username:admin
+username:admin 
+
 password:admin
