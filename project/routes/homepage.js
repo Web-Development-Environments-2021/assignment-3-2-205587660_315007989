@@ -123,7 +123,7 @@ router.use(async function (req, res, next) {
       }
       const team_id = parseInt(req.params.teamId);
       const cookie= parseInt(req.session.user_id);
-      const CheckIfExsits=await teams_utils.AddingFavoriteChecker(req.session.user_id,"FavoriteTeam","teamID",req.params.teamId)
+      const CheckIfExsits=await users_utils.AddingFavoriteChecker(req.session.user_id,"FavoriteTeam","teamID",req.params.teamId)
       if(!CheckIfExsits){
         throw { status: 406, message:"The team is  not in your favorites" };
       }

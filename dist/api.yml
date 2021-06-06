@@ -242,7 +242,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 56 
+        example: 42
       responses:
         "200":
           description: OK. recipes on the way.
@@ -416,7 +416,7 @@ paths:
           explode: false
           schema:
             type: number
-            example: 85764
+            example: 82765
       responses:
         "200":
           description: OK. recipes on the way.
@@ -497,7 +497,7 @@ paths:
           explode: false
           schema:
             type: string
-          example: Lyngby
+          example: Midtjylland
       responses:
         "200":
           description: data of specific player

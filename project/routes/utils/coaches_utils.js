@@ -53,7 +53,8 @@ async function SearchCoachByname(name) {
 async function extractRelevantCoachData(name,coaches) {
   const coachArr = [];
   coaches.data.data.forEach((element) => {
-      if(element.coach.data.fullname.toLowerCase().includes(name.toLowerCase())){ 
+    var coach_name=element.coach.data.fullname;
+      if(coach_name && coach_name.toString().toLowerCase().includes(name.toString().toLowerCase())){ 
         //#TODO LOWERCASE NAME SEARCHES
          var obj = {
            coach_id: element.coach.data.coach_id,

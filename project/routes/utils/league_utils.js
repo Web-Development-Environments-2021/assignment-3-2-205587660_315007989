@@ -1,6 +1,6 @@
 const axios = require("axios");
 const LEAGUE_ID = 271;
-const STAGE_ID = 271;
+const STAGE_ID = 18334;
 const DButils = require("./DButils");
 
 async function getLeagueDetails() {
