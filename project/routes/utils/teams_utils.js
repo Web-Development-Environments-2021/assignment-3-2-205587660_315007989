@@ -77,6 +77,7 @@ function extractRelevantData(teams_info, isPromise) {
   teams_info.forEach((element) => {
     var obj = {
       team_name: element.data.data.name,
+      team_id: element.data.data.id,
       logo_path: element.data.data.logo_path,
       coach_id: element.data.data.coach.data.coach_id,
       coach_name: element.data.data.coach.data.fullname,
