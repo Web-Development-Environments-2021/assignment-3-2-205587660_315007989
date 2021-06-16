@@ -187,7 +187,10 @@ paths:
                   example: Regular Season
                 stadium: 
                   type: String
-                  example: Sydbank Park
+                  example: Sydbank Park  	
+                hour:
+                  type: string
+                  example:  20:00
       responses:
         "201":
           description: Game created
@@ -342,7 +345,7 @@ paths:
     #       description: success
     #     "400":
     #       description: somting went wrong
-  /coach/coachDetailByName/{coach_name}:
+  /coach/SearchCoachByName/{coach_name}:
     get:
       tags:
         - Coachs
@@ -367,11 +370,11 @@ paths:
         "400":
           description: Bad Request.
 
-  /coach/coachDetailByName/{coach_name}/filterbyTeam/{teamName}:
+  /coach/SearchCoachByName/{coach_name}/filterbyTeam/{teamName}:
     get:
       tags:
         - Coachs
-      summary: Search player by name
+      summary: Search coach by name
       parameters:
         - name: coach_name
           in: path
