@@ -768,6 +768,21 @@ paths:
                   type: string 
                 example: ["Daniel Izmaylov", "Ofek Ronen" ]
 
+  /league/Teams/:
+    get:
+      tags:
+        - league
+      summary: Get all available teams
+      responses:
+        "200":
+          description: all available teams
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Team"
+
   /league/Stages/:
     get:
       tags:

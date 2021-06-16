@@ -7,10 +7,11 @@ const games_utils = require("./utils/games_utils");
 
 router.get("/teamFullDetails/:teamId", async (req, res, next) => {
   // let team_details = [];
+  const players_details=[]
   try {
-    const players_details = await players_utils.getPlayersByTeam(
-      req.params.teamId
-    );
+    // const players_details = await players_utils.getPlayersByTeam(
+      // req.params.teamId
+    // );
     const team_stats = await teams_utils.getTeamDetailsbyID(
       req.params.teamId
     );

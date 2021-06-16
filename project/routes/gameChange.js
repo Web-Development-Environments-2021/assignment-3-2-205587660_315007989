@@ -86,6 +86,7 @@ router.put("/:gameId", async (req, res, next) => {
 
 router.post("/:gameId/events/", async (req, res, next) => {
     try {
+        console.log()
         // todo: check if game exist 
         const game_details = await games_utils.getGameDetial(req.params.gameId);
         if (!game_details)

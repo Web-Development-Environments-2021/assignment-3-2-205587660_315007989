@@ -34,6 +34,7 @@ async function getPlayerDetail(id) {
         player_id: id,
         name: player.data.data.fullname,
         team_name: player.data.data.team.data.name,
+        team_id: player.data.data.team_id,
         position: player.data.data.position_id,
         image: player.data.data.image_path,
         nationality: player.data.data.nationality,
@@ -85,6 +86,7 @@ function extractRelevantPlayersData(players_info, isPromise) {
           position: element.position_id,
           image: element.image_path,
           team_name: element.team.data.name,
+          team_id: element.team.data.id,
         }
         Player_arr.push(obj);
 

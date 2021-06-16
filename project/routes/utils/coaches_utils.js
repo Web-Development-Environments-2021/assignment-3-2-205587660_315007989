@@ -25,6 +25,7 @@ async function getCoachById(id) {
         coach_id: id,
         name: coach.data.data.fullname,
         team_name: coach.data.data.team.data.name,
+        team_id: coach.data.data.team_id,
         image: coach.data.data.image_path,
         nationality: coach.data.data.nationality,
         birth_date: coach.data.data.birthdate,

@@ -12,16 +12,9 @@ async function getGameDetial(game_id) {
   // const awayTeam =await  teams_utils.getTeamDetailsbyID(game_detiel.awayTeam);
   // const homeTeam = await teams_utils.getTeamDetailsbyID( game_detiel.homeTeam);
   const events = await getEvents(game_id);
-  return {
-    game_id: game_id,
-    gameDate: game_detiel.gameDate,
-    homeTeam: game_detiel.homeTeam,
-    awayTeam: game_detiel.awayTeam,
-    referee: game_detiel.referee,
-    homescore: game_detiel.homeScore,
-    awayScore: game_detiel.awayScore,
-    events: events
-  };
+
+  game_detiel.events = events;
+  return game_detiel
 }
 
 async function updateGameDetial(game_id,homeScore, awayScore) {

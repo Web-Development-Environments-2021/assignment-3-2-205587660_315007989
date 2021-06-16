@@ -32,6 +32,15 @@ router.get("/Stadiums", async (req, res, next) => {
   }
 });
 
+router.get("/Teams", async (req, res, next) => {
+  try {
+    const teams_details = await league_utils.getTeams();
+    res.send(teams_details);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get("/Stages", async (req, res, next) => {
   try {
     const ref_details = await league_utils.getStages();

@@ -46,6 +46,15 @@ async function getReferees() {
   return referesArr;
 }
 
+async function getTeams() {
+
+  const teams = await DButils.execQuery(
+    `SELECT [TeamId]
+    , [Name]
+  FROM[dbo].[Teamstest]`);
+  return teams;
+}
+
 async function getStadiums() {
 
   const stadiums = await DButils.execQuery(
@@ -71,6 +80,7 @@ async function getStages() {
 
 
 exports.getReferees = getReferees;
+exports.getTeams = getTeams;
 exports.getStages = getStages;
 exports.getStadiums = getStadiums;
 exports.getLeagueDetails = getLeagueDetails;
