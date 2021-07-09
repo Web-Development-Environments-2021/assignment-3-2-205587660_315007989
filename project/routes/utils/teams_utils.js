@@ -14,7 +14,7 @@ async function getTeamDetailsbyID(TEAM_ID) {
     );
     
     if (team.data.data.league) {
-      if (team.data.data.league.data.id === 271) {
+      if (team.data.data.league.data.id === 271 && team.data.data.current_season_id==18334) {
         return {
           team_id: TEAM_ID,
           team_name: team.data.data.name,
@@ -37,6 +37,7 @@ async function getTeamDetailsbyName(TEAM_Name) {
     `https://soccer.sportmonks.com/api/v2.0/teams/search/${TEAM_Name}`,
     {
       params: {
+         include: "league",
         api_token: process.env.api_token,
       },
     }
@@ -48,8 +49,10 @@ async function getTeamDetailsbyName(TEAM_Name) {
       team_name: element.name,
       logo_path: element.logo_path,
     }
-    Team_Info.push(obj)
-  })
+    if (element.current_season_id=="18334"){
+         Team_Info.push(obj)
+ 
+    }  })
 
   return Team_Info;
 }
@@ -83,8 +86,10 @@ function extractRelevantData(teams_info, isPromise) {
       coach_name: element.data.data.coach.data.fullname,
       trophies: element.data.data.trophies.data,
     }
-    team_arr.push(obj);
-  })
+    if(element.data.data.current_season_id==18334){
+      team_arr.push(obj);
+
+    }  })
   return team_arr;
 }
 

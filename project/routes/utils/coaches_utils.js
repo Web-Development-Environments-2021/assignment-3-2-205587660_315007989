@@ -20,7 +20,7 @@ async function getCoachById(id) {
     }
   );
   if (coach.data.data.team && coach.data.data.team.data.league) {
-    if (coach.data.data.team.data.league.data.id === 271) {
+    if (coach.data.data.team.data.league.data.id === 271 && coach.data.data.team.data.current_season_id==18334) {
       return {
         coach_id: id,
         name: coach.data.data.fullname,
@@ -38,7 +38,7 @@ async function getCoachById(id) {
 }
 
 async function SearchCoachByname(name) {
-  const coaches = await axios.get(`${api_domain}/teams/season/17328`,
+  const coaches = await axios.get(`${api_domain}/teams/season/18334`,
   {
     params: {
       include: "coach",

@@ -29,7 +29,7 @@ async function getPlayerDetail(id) {
     }
   );
   if (player.data.data.team && player.data.data.team.data.league) {
-    if (player.data.data.team.data.league.data.id === 271) {
+    if (player.data.data.team.data.league.data.id === 271 && player.data.data.team.data.current_season_id==18334) {
       return {
         player_id: id,
         name: player.data.data.fullname,
@@ -79,7 +79,7 @@ function extractRelevantPlayersData(players_info, isPromise) {
     }
     if (element.team && element.team.data.league) {
       var league = element.team.data.league.data.id;
-      if (league === 271) {
+      if (league === 271 && element.team.data.league.data.current_season_id==18334) {
         var obj = {
           player_id: element.player_id,
           name: element.fullname,
