@@ -79,7 +79,7 @@ function extractRelevantPlayersData(players_info, isPromise) {
     }
     if (element.team && element.team.data.league) {
       var league = element.team.data.league.data.id;
-      if (league === 271) {
+      if (league === 271 && element.team.data.league.data.current_season_id==18334) {
         var obj = {
           player_id: element.player_id,
           name: element.fullname,
