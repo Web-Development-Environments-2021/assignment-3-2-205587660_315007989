@@ -29,7 +29,7 @@ async function getPlayerDetail(id) {
     }
   );
   if (player.data.data.team && player.data.data.team.data.league) {
-    if (player.data.data.team.data.league.data.id === 271) {
+    if (player.data.data.team.data.league.data.id === 271 && player.data.data.team.data.current_season_id==18334) {
       return {
         player_id: id,
         name: player.data.data.fullname,
