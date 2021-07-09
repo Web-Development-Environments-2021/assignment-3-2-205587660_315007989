@@ -59,6 +59,7 @@ async function extractRelevantCoachData(name,coaches) {
         //#TODO LOWERCASE NAME SEARCHES
          var obj = {
            coach_id: element.coach.data.coach_id,
+           team_id: element.coach.data.team_id,
           name:element.coach.data.fullname,
           team_name: element.name,
           image: element.coach.data.image_path,
