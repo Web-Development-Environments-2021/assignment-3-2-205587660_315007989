@@ -28,10 +28,10 @@ router.use(async function (req, res, next) {
 
 router.post("/", async (req, res, next) => {
     try {
+        console.log(req.body)
         if (req.body.homeTeam === req.body.awayTeam)
             throw { status: 409, message: "Team Cant play agianst itself." };
 
-        const date = req.body.gameDate
         if (! await games_utils.isStage(req.body.stageName)) {
             throw { status: 409, message: "The Stage is not in the system" };
         }
@@ -86,7 +86,6 @@ router.put("/:gameId", async (req, res, next) => {
 
 router.post("/:gameId/events/", async (req, res, next) => {
     try {
-        console.log()
         // todo: check if game exist 
         const game_details = await games_utils.getGameDetial(req.params.gameId);
         if (!game_details)

@@ -14,7 +14,8 @@ router.get("/playerFullDetails/:playerid", async (req, res, next) => {
       if (!player_details){
         throw { status: 406, message: "There is no player with this id" };
       }
-      res.send(player_details);
+      res.send(  );
+      next();
     } catch (error) {
       next(error);  
     }
