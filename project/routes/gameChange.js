@@ -37,7 +37,7 @@ router.post("/", async (req, res, next) => {
         }
         const games = await DButils.execQuery(
             `SELECT stage,homeTeam,awayTeam FROM dbo.Games 
-      WHERE homeTeam = ${req.body.homeTeam} AND awayTeam=${req.body.awayTeam} AND stage='${req.body.stageName}';`
+      WHERE homeTeam = ${req.body.homeTeam} AND awayTeam=${req.body.awayTeam} AND gameDate='${req.body.gameDate}';`
         );
         if (games.length != 0)
             throw { status: 409, message: "Game already in system" };
