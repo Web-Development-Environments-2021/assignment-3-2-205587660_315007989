@@ -11,10 +11,11 @@ router.get("/playerFullDetails/:playerid", async (req, res, next) => {
 
       }
       const player_details = await players_utils.getPlayerDetail(req.params.playerid);
+      console.log(player_details)
       if (!player_details){
         throw { status: 406, message: "There is no player with this id" };
       }
-      res.send(  );
+      res.send(player_details);
       next();
     } catch (error) {
       next(error);  
